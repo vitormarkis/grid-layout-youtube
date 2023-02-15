@@ -1,0 +1,50 @@
+.youtube-container {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12rem;
+    grid-template-areas:
+        "main-video sidebar"
+        "texts sidebar"
+    ;
+}
+
+.youtube-container img {
+    aspect-ratio: 16 / 9;
+}
+
+.main-video {
+    /* position: sticky; */
+    top: 0;
+    max-width: 100%;
+}
+
+.sidebar {
+    overflow: auto;
+    height: 620px;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+@media (max-width: 900px) {
+
+    .youtube-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "main-video"
+            "sidebar"
+            "texts"
+        ;
+    }
+
+    .sidebar {
+        overflow: auto;
+        flex-direction: row;
+    }
+
+    .sidebar-video {
+        flex: 1 0 200px;
+    }
+}
